@@ -3,7 +3,8 @@
 OpenCV C Image Processing and Computer Vision legacy examples used for teaching, instruction and reference over the years (2006-2010).
 
 All tested with OpenCV 2.x and GCC (Linux) and known to work with MS Visual Studio 200x on Win32 / Win64.
-N.B. due to changes in the OpenCV API **these do not generically work with OpenCV > 2.x** and by default
+N.B. due to changes in the OpenCV API _these do not generically work with OpenCV > 2.x_ by default.
+
 (see https://github.com/tobybreckon/cpp-examples-ipcv for OpenCV 3.x C++ examples).
 
 --
