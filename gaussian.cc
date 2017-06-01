@@ -34,8 +34,8 @@ int main( int argc, char** argv )
   IplImage* smooth = NULL;   // tmp image object
   CvCapture* capture = NULL; // capture object
 
-  char* windowName1 = "OPENCV: gaussian smoothing"; // window name
-  char* windowName2 = "OPENCV: original image"; // window name
+  char const * windowName1 = "OPENCV: gaussian smoothing"; // window name
+  char const * windowName2 = "OPENCV: original image"; // window name
 
   bool keepProcessing = true;	// loop control flag
   char key;						// user input

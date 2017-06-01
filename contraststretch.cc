@@ -70,10 +70,10 @@ int main( int argc, char** argv )
 
   CvCapture* capture = NULL; // capture object
 
-  char* windowName = "Contrast Stretched Version"; // window name
-  char* windowName1 = "Original Grayscale"; // window name
-  char* windowNameH1 = "Contrast Stretched Histogram"; // window name
-  char* windowNameH2 = "Original Grayscale Histogram"; // window name
+  char const * windowName = "Contrast Stretched Version"; // window name
+  char const * windowName1 = "Original Grayscale"; // window name
+  char const * windowNameH1 = "Contrast Stretched Histogram"; // window name
+  char const * windowNameH2 = "Original Grayscale Histogram"; // window name
 
   bool keepProcessing = true;	// loop control flag
   char key;						// user input

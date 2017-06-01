@@ -34,8 +34,8 @@ int main( int argc, char** argv )
   IplImage* img = NULL;      // image object
   CvCapture* capture = NULL; // capture object
 
-  char* windowNameBG = "Scene Background"; // window name
-  char* windowNameFG = "Scene Foreground"; // window name
+  char const * windowNameBG = "Scene Background"; // window name
+  char const * windowNameFG = "Scene Foreground"; // window name
 
   bool keepProcessing = true;	// loop control flag
   char key;						// user input

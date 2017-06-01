@@ -15,7 +15,7 @@ int main( int argc, char** argv )
 
   IplImage* img;  // image object 
 
-  char* windowName = "OPENCV: basic image display"; // window name
+  char const * windowName = "OPENCV: basic image display"; // window name
 
   // check that command line arguments are provided and image reads in OK
 

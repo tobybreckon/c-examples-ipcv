@@ -36,12 +36,12 @@ int main( int argc, char** argv )
   IplImage* blueImg = NULL;  // blue image channel
   IplImage* thresholdedImg = NULL;  // output image object
 
-  char* windowName1R = "OPENCV: RED Channel thresholding"; // window name
-  char* windowName1G = "OPENCV: GREEN Channel thresholding"; // window name
-  char* windowName1B = "OPENCV: BLUE Channel thresholding"; // window name
-  char* windowName2R = "OPENCV: RED Channel  image"; // window name
-  char* windowName2G = "OPENCV: GREEN Channel image"; // window name
-  char* windowName2B = "OPENCV: BLUE Channel image"; // window name
+  char const * windowName1R = "OPENCV: RED Channel thresholding"; // window name
+  char const * windowName1G = "OPENCV: GREEN Channel thresholding"; // window name
+  char const * windowName1B = "OPENCV: BLUE Channel thresholding"; // window name
+  char const * windowName2R = "OPENCV: RED Channel  image"; // window name
+  char const * windowName2G = "OPENCV: GREEN Channel image"; // window name
+  char const * windowName2B = "OPENCV: BLUE Channel image"; // window name
 
   int thresholdR = 150; // starting threshold value
   int thresholdG = 150; // starting threshold value

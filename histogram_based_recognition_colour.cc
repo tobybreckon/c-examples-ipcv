@@ -45,7 +45,7 @@ int main( int argc, char** argv )
   IplImage* img = NULL;      // image object
   CvCapture* capture = NULL; // capture object
 
-  char* windowName = "Histogram Based Recognition"; // window name
+  char const * windowName = "Histogram Based Recognition"; // window name
 
   bool keepProcessing = true;	// loop control flag
   char key;						// user input
@@ -56,7 +56,7 @@ int main( int argc, char** argv )
 
   #define MAX_NUMBER_OF_SAMPLE_IMAGES 255
   int hist_size = 256;			// size of histogram (number of bins)
-  float range_0[]={0, (float) hist_size};
+  float range_0[]={0, float(hist_size)};
   float* ranges[] = { range_0 };
   CvHistogram* currentHistogramR =
   					cvCreateHist(1, &hist_size, CV_HIST_ARRAY, ranges, 1);

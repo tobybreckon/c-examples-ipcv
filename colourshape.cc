@@ -34,8 +34,8 @@ int main( int argc, char** argv )
   IplImage* img = NULL;      // image object
   CvCapture* capture = NULL; // capture object
 
-  char* windowNameHSV = "Colour Information"; // window name
-  char* windowNameCanny = "Shape Information"; // window name
+  char const * windowNameHSV = "Colour Information"; // window name
+  char const * windowNameCanny = "Shape Information"; // window name
 
  IplImage* HSV = NULL;
  IplImage* singleChannelH = NULL;

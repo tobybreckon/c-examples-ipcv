@@ -43,8 +43,8 @@ int main( int argc, char** argv )
   IplImage* img = NULL;      // image object
   CvCapture* capture = NULL; // capture object
 
-  char* originalName = "Original Image (grayscale)"; // window name
-  char* magnitudeName = "Magnitude Image (log transformed)"; // window name
+  char const * originalName = "Original Image (grayscale)"; // window name
+  char const * magnitudeName = "Magnitude Image (log transformed)"; // window name
 
   bool keepProcessing = true;	// loop control flag
   char key;						// user input

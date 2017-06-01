@@ -79,8 +79,8 @@ int main( int argc, char** argv )
   int constant = 16; // starting constant value
   CvCapture* capture = NULL; // capture object
 
-  char* windowName1 = "OPENCV: adaptive image thresholding"; // window name
-  char* windowName2 = "OPENCV: Main Contour Image"; // window name
+  char const * windowName1 = "OPENCV: adaptive image thresholding"; // window name
+  char const * windowName2 = "OPENCV: Main Contour Image"; // window name
   char outputString[255]; // string for text output in a window
 
   bool keepProcessing = true;	// loop control flag

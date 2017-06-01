@@ -36,8 +36,8 @@ int main( int argc, char** argv )
   IplImage* diff = NULL;     // difference image object
   CvCapture* capture = NULL; // capture object
 
-  char* windowNameBG = "Original Scene"; // window name
-  char* windowNameFG = "Scene Change"; // window name
+  char const * windowNameBG = "Original Scene"; // window name
+  char const * windowNameFG = "Scene Change"; // window name
 
   bool keepProcessing = true;	// loop control flag
   char key;						// user input

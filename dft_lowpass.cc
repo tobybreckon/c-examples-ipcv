@@ -92,9 +92,9 @@ int main( int argc, char** argv )
 
   IplImage* dft_spec_mag = NULL;
 
-  char* originalName = "Original Image (grayscale)"; // window name
-  char* lowPassName = "Low Pass Filtered (grayscale)"; // window name
-  char* spectrumMagName = "Magnitude Image (log transformed)"; // window name
+  char const * originalName = "Original Image (grayscale)"; // window name
+  char const * lowPassName = "Low Pass Filtered (grayscale)"; // window name
+  char const * spectrumMagName = "Magnitude Image (log transformed)"; // window name
 
 
   bool keepProcessing = true;	// loop control flag

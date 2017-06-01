@@ -16,14 +16,14 @@
 
 /******************************************************************************/
 
-// simple function to insert string before the ".jpg" or similar 
+// simple function to insert string before the ".jpg" or similar
 // filename extension
 
 void insertStringBeforeExtension(char * filename, char * stringToInsert){
-	
+
 	char *dotLocation = strpbrk(filename, ".");
-	char extenstionPart[strlen(filename) - strlen(dotLocation)]; 
-	
+	char extenstionPart[strlen(filename) - strlen(dotLocation)];
+
 	strcpy(extenstionPart, dotLocation);
 	*dotLocation = '\0';
 	strcat(filename, stringToInsert);
@@ -36,39 +36,41 @@ int main( int argc, char** argv )
 {
 
   IplImage* img = NULL;      // image object
-  IplImage *oddImage, *evenImage = NULL;      // odd/even image object	
-	
-  char filename [FILENAME_MAX];	
-	
-  // if command line arguments are provided try to read image/video_name
-  // otherwise default to capture from attached H/W camera 
+  IplImage *oddImage, *evenImage = NULL;      // odd/even image object
 
-    if( 
-	  ( argc == 2 && (img = cvLoadImage( argv[1], CV_LOAD_IMAGE_UNCHANGED)) != 0 ) 
+  char filename [FILENAME_MAX];
+
+  // if command line arguments are provided try to read image/video_name
+  // otherwise default to capture from attached H/W camera
+
+    if(
+	  ( argc == 2 && (img = cvLoadImage( argv[1], CV_LOAD_IMAGE_UNCHANGED)) != 0 )
 	  )
     {
-	  
+
 	  // create output image
-	  
-	  oddImage = cvCreateImage(cvSize(img->width,(img->height / 2)), 
+
+	  oddImage = cvCreateImage(cvSize(img->width,(img->height / 2)),
 						   img->depth, img->nChannels);
-	  oddImage->origin = img->origin;		
-	  evenImage = cvCreateImage(cvSize(img->width, (img->height / 2)), 
+	  oddImage->origin = img->origin;
+	  evenImage = cvCreateImage(cvSize(img->width, (img->height / 2)),
 						   img->depth, img->nChannels);
-	  evenImage->origin = img->origin;	
-		
+	  evenImage->origin = img->origin;
+
 	  // de-interlace image
-	  
+
 	  cvDeInterlace(img, evenImage, oddImage);
-	  
+
 	  // resize even image to original input size
-	  
+
 	  cvResize(evenImage, img, CV_INTER_CUBIC);
 
 	  // write to file
 
+		char const *str_label = "EVENFRAME";
+
 	  strcpy(filename, argv[1]);
-	  insertStringBeforeExtension(filename, "EVENFRAME");
+	  insertStringBeforeExtension(filename, (char *) str_label);
 	  cvSaveImage(filename, img);
 
       // all OK : main returns 0

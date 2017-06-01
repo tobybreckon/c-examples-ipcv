@@ -36,7 +36,7 @@ int main( int argc, char** argv )
   IplImage* img = NULL;      // image object
   CvCapture* capture = NULL; // capture object
 
-  char* windowName = "Watershed Segmentation"; // window name
+  char const * windowName = "Watershed Segmentation"; // window name
 
   bool keepProcessing = true;	// loop control flag
   char key;						// user input
@@ -101,7 +101,7 @@ int main( int argc, char** argv )
 	  CvMat* color_tab = cvCreateMat( 1, 255, CV_8UC3 );
             for(int i = 0; i < 255; i++ )
             {
-                uchar* ptr = color_tab->data.ptr + i*3;
+                uchar * ptr = color_tab->data.ptr + i*3;
                 ptr[0] = (uchar)(cvRandInt(&rng)%180 + 50);
                 ptr[1] = (uchar)(cvRandInt(&rng)%180 + 50);
                 ptr[2] = (uchar)(cvRandInt(&rng)%180 + 50);
@@ -196,13 +196,13 @@ int main( int argc, char** argv )
                 for( j = 0; j < output->width; j++ )
                 {
                     int idx = CV_IMAGE_ELEM( output, int, i, j );
-                    uchar* dst = &CV_IMAGE_ELEM( wshed, uchar, i, j*3 );
+                    uchar * dst = &CV_IMAGE_ELEM( wshed, uchar, i, j*3 );
                     if( idx == -1 ) {
                         dst[0] = dst[1] = dst[2] = (uchar)255;
                     } else if( idx <= 0 || idx > 255 ) {
                         dst[0] = dst[1] = dst[2] = (uchar)0; // should not get here
                     } else {
-                        uchar* ptr = color_tab->data.ptr + (idx-1)*3;
+                        uchar const * ptr = color_tab->data.ptr + (idx-1)*3;
                         dst[0] = ptr[0]; dst[1] = ptr[1]; dst[2] = ptr[2];
                     }
                 }

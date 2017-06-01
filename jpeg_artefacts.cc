@@ -34,9 +34,9 @@ int main( int argc, char** argv )
   IplImage* jpeg = NULL;      // image object
   CvCapture* capture = NULL; // capture object
 
-  char* windowNameSrc = "Source Image"; // window name
-  char* windowNameJPEG = "JPEG Image"; // window name
-  char* windowNameDiff = "Difference Image (scaled)"; // window name
+  char const * windowNameSrc = "Source Image"; // window name
+  char const * windowNameJPEG = "JPEG Image"; // window name
+  char const * windowNameDiff = "Difference Image (scaled)"; // window name
 
   bool keepProcessing = true;	// loop control flag
   char key;						// user input

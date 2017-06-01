@@ -80,7 +80,7 @@ int main( int argc, char** argv )
   char key;
   bool keepProcessing = true;
 	
-  char* windowName = "OPENCV: colour query"; // window name
+  char const * windowName = "OPENCV: colour query"; // window name
 
   // check that command line arguments are provided and image reads in OK
 

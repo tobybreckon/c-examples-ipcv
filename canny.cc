@@ -6,9 +6,13 @@
 // Copyright (c) 2007 School of Engineering, Cranfield University
 // License : LGPL - http://www.gnu.org/licenses/lgpl.html
 
-#include "opencv2/videoio.hpp"
-#include "opencv2/highgui.hpp"
-#include "opencv2/imgproc.hpp"
+// for OpenCV > 2.x use
+//#include "opencv2/videoio.hpp"
+//#include "opencv2/highgui.hpp"
+//#include "opencv2/imgproc.hpp"
+
+#include "cv.h"       // open cv general include file
+#include "highgui.h"  // open cv GUI include file
 
 #include <stdio.h>		// standard C++ I/O
 #include <algorithm>    // includes max()
@@ -27,7 +31,7 @@ int main( int argc, char** argv )
   int upperThreshold = 200; // upper canny edge threshold initial setting
   int windowSize = 3;		// canny edge window size
 
-  char* windowName = "Durham University: Canny Edge Detection Demonstrator"; // window name
+  char const * windowName = "Durham University: Canny Edge Detection Demonstrator"; // window name
 
   bool keepProcessing = true;	// loop control flag
   char key;						// user input

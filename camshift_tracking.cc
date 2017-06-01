@@ -129,10 +129,10 @@ int main( int argc, char** argv )
 
   CvCapture* capture = NULL; // capture object
 
-  const char* windowName = "CAMSHIFT Tracking"; // window name
-  const char* windowName2 = "Histogram Model (Hue)"; // window name
-  const char* windowName3 = "Variance / Saturation Mask"; // window name
-  const char* windowName4 = "Histogram Live (Hue)"; // window name
+  char const * windowName = "CAMSHIFT Tracking"; // window name
+  char const * windowName2 = "Histogram Model (Hue)"; // window name
+  char const * windowName3 = "Variance / Saturation Mask"; // window name
+  char const * windowName4 = "Histogram Live (Hue)"; // window name
 
   bool keepProcessing = true;	// loop control flag
   char key;						// user input

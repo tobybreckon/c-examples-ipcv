@@ -36,8 +36,8 @@ int main( int argc, char** argv )
   int constant = 0; // starting constant value
   CvCapture* capture = NULL; // capture object
 	
-  char* windowName1 = "OPENCV: adaptive image thresholding"; // window name
-  char* windowName2 = "OPENCV: grayscale image"; // window name
+  char const * windowName1 = "OPENCV: adaptive image thresholding"; // window name
+  char const * windowName2 = "OPENCV: grayscale image"; // window name
 
   bool keepProcessing = true;	// loop control flag
   char key;						// user input	

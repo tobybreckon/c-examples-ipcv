@@ -96,8 +96,8 @@ int main( int argc, char** argv )
 
   CvCapture* capture = NULL; // capture object
 
-  const char* windowName = "Correlation Based Template Matching"; // window name
-  const char* windowName2 = "Correlation Response"; // window name
+  char const * windowName = "Correlation Based Template Matching"; // window name
+  char const * windowName2 = "Correlation Response"; // window name
 
   bool keepProcessing = true;	// loop control flag
   char key;						// user input

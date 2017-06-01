@@ -68,9 +68,9 @@ int main( int argc, char** argv )
   int constant = 0; // starting constant value
   CvCapture* capture = NULL; // capture object
 
-  const char* windowName1 = "OPENCV: adaptive image thresholding"; // window name
-  const char* windowName2 = "OPENCV: grayscale image"; // window name
-  const char* windowName3 = "OPENCV: adaptive threshold image"; // window name
+  char const * windowName1 = "OPENCV: adaptive image thresholding"; // window name
+  char const * windowName2 = "OPENCV: grayscale image"; // window name
+  char const * windowName3 = "OPENCV: adaptive threshold image"; // window name
 
 
   bool keepProcessing = true;	// loop control flag
@@ -137,7 +137,7 @@ int main( int argc, char** argv )
 	  CvMat* color_tab = cvCreateMat( 1, 255, CV_8UC3 );
             for(int i = 0; i < 255; i++ )
             {
-                uchar* ptr = color_tab->data.ptr + i*3;
+                uchar * ptr = color_tab->data.ptr + i*3;
                 ptr[0] = (uchar)(cvRandInt(&rng)%180 + 50);
                 ptr[1] = (uchar)(cvRandInt(&rng)%180 + 50);
                 ptr[2] = (uchar)(cvRandInt(&rng)%180 + 50);
@@ -215,7 +215,7 @@ int main( int argc, char** argv )
 			comp_count = 0;
             for( ; current_contour != 0; current_contour = current_contour->h_next, comp_count++ )
             {
-				uchar* ptr = color_tab->data.ptr + (comp_count)*3;
+				uchar const * ptr = color_tab->data.ptr + (comp_count)*3;
 				CvScalar color = CV_RGB( ptr[0], ptr[1], ptr[2] );
                 cvDrawContours( dst, current_contour, color,
                                 color, -1, CV_FILLED, 8, cvPoint(0,0) );

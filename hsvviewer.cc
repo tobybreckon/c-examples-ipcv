@@ -35,10 +35,10 @@ int main( int argc, char** argv )
   IplImage*	HSVimg_out = NULL;   // HSV image object
   CvCapture* capture = NULL; 	 // capture object
 
-  char* windowName = "RGB Original Image"; 	// window name
-  char* windowNameH = "Hue Channel"; 		// window name
-  char* windowNameS = "Saturation Channel"; // window name
-  char* windowNameV = "Variance Channel"; 	// window name
+  char const * windowName = "RGB Original Image"; 	// window name
+  char const * windowNameH = "Hue Channel"; 		// window name
+  char const * windowNameS = "Saturation Channel"; // window name
+  char const * windowNameV = "Variance Channel"; 	// window name
 
   bool keepProcessing = true;	// loop control flag
   char key;						// user input

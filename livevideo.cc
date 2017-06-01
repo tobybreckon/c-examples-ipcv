@@ -16,7 +16,7 @@ int main( int argc, char** argv )
 
   IplImage* img;  // image object 
 
-  char* windowName = "OPENCV: live video display"; // window name
+  char const * windowName = "OPENCV: live video display"; // window name
 
   // create window object
 

@@ -15,7 +15,7 @@ int main( int argc, char** argv )
   IplImage* inputImg = NULL;  // input image object 
   IplImage* outputImg = NULL;  // output image object
 
-  char* windowName = "OPENCV: blurred image"; // window name
+  char const * windowName = "OPENCV: blurred image"; // window name
 
   // check that command line arguments are provided and image reads in OK
 

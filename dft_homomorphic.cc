@@ -92,10 +92,10 @@ int main( int argc, char** argv )
 
   IplImage* dft_spec_mag = NULL;
 
-  char* originalName = "Original Image (grayscale)"; // window name
-  char* homomorphicName = "Homomorphic Filtered (grayscale)"; // window name
-  char* spectrumMagName = "Magnitude Image (log transformed)"; // window name
-  char* filterName = "Filter Image"; // window name
+  char const * originalName = "Original Image (grayscale)"; // window name
+  char const * homomorphicName = "Homomorphic Filtered (grayscale)"; // window name
+  char const * spectrumMagName = "Magnitude Image (log transformed)"; // window name
+  char const * filterName = "Filter Image"; // window name
 
   bool keepProcessing = true;	// loop control flag
   char key;						// user input

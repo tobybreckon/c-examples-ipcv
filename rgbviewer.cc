@@ -33,10 +33,10 @@ int main( int argc, char** argv )
   IplImage* img = NULL;      // image object
   CvCapture* capture = NULL; // capture object
 
-  char* windowName = "RGB Original Image"; // window name
-  char* windowNameR = "Red Channel"; // window name
-  char* windowNameG = "Green Channel"; // window name
-  char* windowNameB = "Blue Channel"; // window name
+  char const * windowName = "RGB Original Image"; // window name
+  char const * windowNameR = "Red Channel"; // window name
+  char const * windowNameG = "Green Channel"; // window name
+  char const * windowNameB = "Blue Channel"; // window name
 
   bool keepProcessing = true;	// loop control flag
   char key;						// user input

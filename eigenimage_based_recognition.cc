@@ -45,7 +45,7 @@ int main( int argc, char** argv )
   IplImage* img = NULL;      // image object
   CvCapture* capture = NULL; // capture object
 
-  char* windowName = "Eigenspace Based Image Recognition"; // window name
+  char const * windowName = "Eigenspace Based Image Recognition"; // window name
 
   bool keepProcessing = true;	// loop control flag
   char key;						// user input

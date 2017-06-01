@@ -35,8 +35,8 @@ int main( int argc, char** argv )
   IplImage* hist_img = NULL; // histogram image object
   CvCapture* capture = NULL; // capture object
 
-  char* windowName = "Grayscale Image"; // window name
-  char* windowNameHist = "Grayscale Image Histogram"; // window name
+  char const * windowName = "Grayscale Image"; // window name
+  char const * windowNameHist = "Grayscale Image Histogram"; // window name
 
   bool keepProcessing = true;	// loop control flag
   char key;						// user input

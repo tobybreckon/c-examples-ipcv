@@ -18,7 +18,7 @@ int main( int argc, char** argv )
   IplImage* grayImg = NULL;  // tmp image object
   IplImage* edgeImg = NULL;  // output image object
 
-  char* windowName = "OPENCV: live edges"; // window name
+  char const * windowName = "OPENCV: live edges"; // window name
 
   bool keepProcessing = true;
   char key;

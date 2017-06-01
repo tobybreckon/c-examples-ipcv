@@ -35,7 +35,7 @@ int main( int argc, char** argv )
   IplImage* imgOutput = NULL;      // image object
   CvCapture* capture = NULL; // capture object
 
-  char* windowName = "Rotate/Zoom Image"; // window name
+  char const * windowName = "Rotate/Zoom Image"; // window name
 
   bool keepProcessing = true;	// loop control flag
   char key;						// user input

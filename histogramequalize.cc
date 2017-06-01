@@ -69,10 +69,10 @@ int main( int argc, char** argv )
   IplImage* eqHistogramImage = NULL;  	// histogram images
   IplImage* grayHistogramImage = NULL;
 
-  char* windowName = "Histogram Equalization"; // window name
-  char* windowName1 = "Grayscale"; // window name
-  char* windowNameH1 = "Equalised Histogram"; // window name
-  char* windowNameH2 = "Original Histogram"; // window name
+  char const * windowName = "Histogram Equalization"; // window name
+  char const * windowName1 = "Grayscale"; // window name
+  char const * windowNameH1 = "Equalised Histogram"; // window name
+  char const * windowNameH2 = "Original Histogram"; // window name
 
   bool keepProcessing = true;	// loop control flag
   char key;						// user input

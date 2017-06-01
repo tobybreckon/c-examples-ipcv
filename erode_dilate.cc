@@ -36,8 +36,8 @@ int main( int argc, char** argv )
 
   CvCapture* capture = NULL; // capture object
 
-  char* windowName1 = "OPENCV: erode"; // window name
-  char* windowName2 = "OPENCV: dilate"; // window name
+  char const * windowName1 = "OPENCV: erode"; // window name
+  char const * windowName2 = "OPENCV: dilate"; // window name
 
   int erode = 0;		// iteration counters for erode/dilate
   int dilate = 0;

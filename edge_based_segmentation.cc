@@ -35,7 +35,7 @@ int main( int argc, char** argv )
   IplImage* img = NULL;      // image object
   CvCapture* capture = NULL; // capture object
 
-  char* windowName = "Edge Based Segmentation"; // window name
+  char const * windowName = "Edge Based Segmentation"; // window name
 
   bool keepProcessing = true;	// loop control flag
   char key;						// user input
