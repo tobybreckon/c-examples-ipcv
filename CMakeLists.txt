@@ -24,6 +24,7 @@ set( CMAKE_CXX_FLAGS "-O3 -Wall ${CMAKE_CXX_FLAGS}" )
 IF ( UNIX )
    set( CMAKE_PREFIX_PATH "/opt/opencv-2.4" )
    set( CMAKE_CXX_FLAGS "-m64 -Ofast -flto -march=native -funroll-loops ${CMAKE_CXX_FLAGS}" )
+   set_property(GLOBAL PROPERTY TARGET_SUPPORTS_SHARED_LIBS TRUE)
    MESSAGE( "LINUX CONFIG" )
 ENDIF ( UNIX )
 
