@@ -122,7 +122,7 @@ int main( int argc, char** argv )
 		  double t = (double)cvGetTickCount();
           cvUpdateBGStatModel( img, bg_model );
           t = (double)cvGetTickCount() - t;
-          printf( "Update time = %.1f microseconds\n", t/(cvGetTickFrequency()*1000.) );
+          printf( "Update time = %.1f milliseconds\n", t/(cvGetTickFrequency()*1000.) );
 
 		  // display images in windows
 
