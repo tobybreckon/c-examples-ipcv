@@ -4,7 +4,7 @@ OpenCV C Interface Image Processing and Computer Vision legacy examples used for
 
 _Uses C interface to OpenCV, with additional C++ code - as these examples pre-date the C++ OpenCV interface - available post OpenCV 2.x_
 
-All tested with OpenCV 2.x and GCC (Linux) and known to work with MS Visual Studio 200x on Win32 / Win64.
+All tested with [OpenCV](http://www.opencv.org) 2.x and GCC (Linux) and known to work with MS Visual Studio 200x on Win32 / Win64.
 N.B. due to changes in the OpenCV API _these do not generically work with OpenCV > 2.x_ by default.
 
 (see https://github.com/tobybreckon/cpp-examples-ipcv for OpenCV 3.x C++ examples).
