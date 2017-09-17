@@ -11,6 +11,10 @@ N.B. due to changes in the OpenCV API _these do not generically work with OpenCV
 
 ---
 
+### Background:
+
+If I taught you between 2006 and 2010+ at [Cranfield University](http://www.cranfield.ac.uk) or [ESTIA](http://www.estia.fr) - these are the examples from class.
+
 Additionally used to generate the video examples within the ebook version of:
 
 [Dictionary of Computer Vision and Image Processing](http://dx.doi.org/10.1002/9781119286462) (R.B. Fisher, T.P. Breckon, K. Dawson-Howe, A. Fitzgibbon, C. Robertson, E. Trucco, C.K.I. Williams), Wiley, 2014.
@@ -18,13 +22,45 @@ Additionally used to generate the video examples within the ebook version of:
 
 ---
 
-Demo source code is provided _"as is"_ to aid your learning and understanding -- see my textbook http://www.fundipbook.com for the theory (and matlab code also).
+### How to Build and run:
 
-If I taught you between 2006 and 2010+ at [Cranfield University](http://www.cranfield.ac.uk) or [ESTIA](http://www.estia.fr) - these are the examples from class.
+```
+git clone https://github.com/tobybreckon/c-examples-ipcv.git
+cd c-examples-ipcv
+cmake .
+make
+./<insert executable name of one of the examples>
+```
+
+Demo source code is provided _"as is"_ to aid your learning and understanding -- see my textbook http://www.fundipbook.com for the theory (and matlab code also).
 
 Most run with a webcam connected or from a command line supplied video file of a format OpenCV supports on your system (otherwise edit the script to provide your own image source).
 
 N.B. you may need to change the line near the top that specifies the camera device to use on some examples below - change "0" if you have one webcam, I have it set to "1" to skip my built-in laptop webcam and use the connected USB camera.
+
+---
+
+### Reference:
+
+All techniques are fully explained in corresponding section of:
+
+Fundamentals of Digital Image Processing: A Practical Approach with Examples in Matlab
+Chris J. Solomon and Toby P. Breckon, Wiley-Blackwell, 2010
+ISBN: 0470844736, DOI:10.1002/9780470689776, http://www.fundipbook.com
+
+```
+bibtex:
+@Book{solomonbreckon10fundamentals,
+  author 	= 	 {Solomon, C.J. and Breckon, T.P.},
+  title 	= 	 {Fundamentals of Digital Image Processing:
+                                A Practical Approach with Examples in Matlab},
+  publisher 	= 	 {Wiley-Blackwell},
+  year 		= 	 {2010},
+  isbn 		= {0470844736},
+  doi 		= {10.1002/9780470689776},
+  url 		= {http://www.fundipbook.com}
+}
+```
 
 ---
 
