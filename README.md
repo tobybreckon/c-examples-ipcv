@@ -44,7 +44,7 @@ N.B. you may need to change the line near the top that specifies the camera devi
 
 All techniques are fully explained in corresponding section of:
 
-_"Fundamentals of Digital Image Processing: A Practical Approach with Examples in Matlab"_,
+_Fundamentals of Digital Image Processing: A Practical Approach with Examples in Matlab_,
 Chris J. Solomon and Toby P. Breckon, Wiley-Blackwell, 2010
 ISBN: 0470844736, DOI:10.1002/9780470689776, http://www.fundipbook.com
 
