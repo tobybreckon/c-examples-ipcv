@@ -28,30 +28,30 @@
 int main( int argc, char** argv )
 {
 
-  IplImage* img;  			 		// input image object 
+  IplImage* img;  			 		// input image object
   IplImage* grayImg = NULL;  		// tmp image object
   IplImage* thresholdedImg = NULL;  // output image object
-	
+
   int windowSize = 3; // starting threshold value
   int constant = 0; // starting constant value
   CvCapture* capture = NULL; // capture object
-	
+
   char const * windowName1 = "OPENCV: adaptive image thresholding"; // window name
   char const * windowName2 = "OPENCV: grayscale image"; // window name
 
   bool keepProcessing = true;	// loop control flag
-  char key;						// user input	
+  char key;						// user input
   int  EVENT_LOOP_DELAY = 40;	// delay for GUI window
-                                // 40 ms equates to 1000ms/25fps = 40ms per frame	
-	
-  // if command line arguments are provided try to read image/video_name
-  // otherwise default to capture from attached H/W camera 
+                                // 40 ms equates to 1000ms/25fps = 40ms per frame
 
-    if( 
+  // if command line arguments are provided try to read image/video_name
+  // otherwise default to capture from attached H/W camera
+
+    if(
 	  ( argc == 2 && (img = cvLoadImage( argv[1], 1)) != 0 ) ||
-	  ( argc == 2 && (capture = cvCreateFileCapture( argv[1] )) != 0 ) || 
-	  ( argc != 2 && (capture = cvCreateCameraCapture( CAMERA_INDEX )) != 
-0 
+	  ( argc == 2 && (capture = cvCreateFileCapture( argv[1] )) != 0 ) ||
+	  ( argc != 2 && (capture = cvCreateCameraCapture( CAMERA_INDEX )) !=
+0
 )
 	  )
     {
@@ -59,77 +59,77 @@ int main( int argc, char** argv )
 
       cvNamedWindow(windowName1, 1 );
       cvNamedWindow(windowName2, 1 );
-		
+
 	  // add adjustable trackbar for threshold parameter
-		
-      cvCreateTrackbar("Neighbourhood (N)", windowName1, &windowSize, 255, NULL);		
+
+      cvCreateTrackbar("Neighbourhood (N)", windowName1, &windowSize, 255, NULL);
 	  cvCreateTrackbar("Constant (C)", windowName1, &constant, 50, NULL);
-		
+
 	  // if capture object in use (i.e. video/camera)
 	  // get initial image from capture object
-			
+
 	  if (capture) {
-	
-		  // cvQueryFrame s just a combination of cvGrabFrame 
+
+		  // cvQueryFrame s just a combination of cvGrabFrame
 		  // and cvRetrieveFrame in one call.
-			  
+
 		  img = cvQueryFrame(capture);
 		  if(!img){
-			if (argc == 2){				  
+			if (argc == 2){
 				printf("End of video file reached\n");
 			} else {
 				printf("ERROR: cannot get next fram from camera\n");
 			}
 			exit(0);
 		  }
-			  
+
 	  }
-	  
+
 	  // create output image
-	  
-	  thresholdedImg = cvCreateImage(cvSize(img->width,img->height), 
+
+	  thresholdedImg = cvCreateImage(cvSize(img->width,img->height),
 						   img->depth, 1);
 	  thresholdedImg->origin = img->origin;
-	  grayImg = cvCreateImage(cvSize(img->width,img->height), 
+	  grayImg = cvCreateImage(cvSize(img->width,img->height),
 				img->depth, 1);
 	  grayImg->origin = img->origin;
 
-	  // start main loop	
-		
+	  // start main loop
+
 	  while (keepProcessing) {
-		
+
 		  // if capture object in use (i.e. video/camera)
 		  // get image from capture object
-			
+
 		  if (capture) {
-	
-			  // cvQueryFrame s just a combination of cvGrabFrame 
+
+			  // cvQueryFrame s just a combination of cvGrabFrame
 			  // and cvRetrieveFrame in one call.
-			  
+
 			  img = cvQueryFrame(capture);
 			  if(!img){
-				if (argc == 2){				  
+				if (argc == 2){
 					printf("End of video file reached\n");
 				} else {
 					printf("ERROR: cannot get next fram from camera\n");
 				}
 				exit(0);
 			  }
-			  
-		  }	  
-		  
+
+		  }
+
 		  // if input is not already grayscale, convert to grayscale
-		
+
 		  if (img->nChannels > 1){
 			 cvCvtColor(img, grayImg, CV_BGR2GRAY);
 	      } else {
 			grayImg = img;
 		  }
-	  
+
 		  // display image in window
 
 		  cvShowImage( windowName2, grayImg );
-	
+
 		  // check that the window size is always odd and > 3
 
 		  if ((windowSize > 3) && (fmod((double) windowSize, 2) == 0)) {
@@ -137,31 +137,31 @@ int main( int argc, char** argv )
 		  } else if (windowSize < 3) {
 			  windowSize = 3;
 		  }
-		  
+
 		  // threshold the image
-		  
+
 		  cvAdaptiveThreshold(grayImg, thresholdedImg, 255,
-		  						CV_ADAPTIVE_THRESH_MEAN_C, CV_THRESH_BINARY, 
+		  						CV_ADAPTIVE_THRESH_MEAN_C, CV_THRESH_BINARY,
 		  						windowSize, constant);
-			
+
 		  // display image in window
 
 		  cvShowImage( windowName1, thresholdedImg );
 
 		  // start event processing loop (very important,in fact essential for GUI)
 	      // 40 ms roughly equates to 1000ms/25fps = 40ms per frame
-		  
+
 		  key = cvWaitKey(EVENT_LOOP_DELAY);
 
 		  if (key == 'x'){
-			
+
 	   		// if user presses "x" then exit
-			
-	   			printf("Keyboard exit requested : exiting now - bye!\n");	
+
+	   			printf("Keyboard exit requested : exiting now - bye!\n");
 	   			keepProcessing = false;
-		  } 
+		  }
 	  }
-      
+
       // destroy window objects
       // (triggered by event loop *only* window is closed)
 
@@ -172,7 +172,7 @@ int main( int argc, char** argv )
       if (!capture){
 		  cvReleaseImage( &img );
       }
-	  
+
 	  // destroy image objects
 
       cvReleaseImage( &grayImg );

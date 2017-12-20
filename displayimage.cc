@@ -13,7 +13,7 @@
 int main( int argc, char** argv )
 {
 
-  IplImage* img;  // image object 
+  IplImage* img;  // image object
 
   char const * windowName = "OPENCV: basic image display"; // window name
 
@@ -24,15 +24,15 @@ int main( int argc, char** argv )
       // create window object
 
       cvNamedWindow(windowName, 1 );
-      
+
       // display image in window
 
       cvShowImage( windowName, img );
-      
+
       // start event processing loop (very important,in fact essential for GUI)
 
-      cvWaitKey(0); 
-      
+      cvWaitKey(0);
+
       // destroy window object
       // (triggered by event loop *only* window is closed)
 
@@ -41,7 +41,7 @@ int main( int argc, char** argv )
       // destroy image object
 
       cvReleaseImage( &img );
-      
+
       // all OK : main returns 0
 
       return 0;

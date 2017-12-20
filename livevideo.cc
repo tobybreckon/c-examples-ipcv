@@ -14,7 +14,7 @@
 int main( int argc, char** argv )
 {
 
-  IplImage* img;  // image object 
+  IplImage* img;  // image object
 
   char const * windowName = "OPENCV: live video display"; // window name
 
@@ -25,7 +25,7 @@ int main( int argc, char** argv )
   // grab an image from camera (here assume only 1 camera, device #0)
 
   CvCapture* capture = cvCaptureFromCAM(0); // capture from video device #0
-  if(!cvGrabFrame(capture)){              
+  if(!cvGrabFrame(capture)){
     printf("Could not grab a frame\n");
     exit(0);
   }
@@ -41,34 +41,34 @@ int main( int argc, char** argv )
     // display image in window
 
     cvShowImage( windowName, img );
- 
+
     // start event processing loop (very important,in fact essential for GUI)
-    // Note that without the 40[msec] delay the captured sequence 
+    // Note that without the 40[msec] delay the captured sequence
     // is not displayed properly.
 
-    cvWaitKey(40); 
+    cvWaitKey(40);
 
     // capture next frame
 
     cvGrabFrame(capture);
 
   }
-  
+
   // destroy window object
   // (triggered by event loop *only* window is closed)
-  
+
   cvDestroyWindow( windowName );
-  
+
   // release capture device
 
   cvReleaseCapture(&capture);
 
-  // Note that the image captured by the device is allocated/released 
-  // by the capture function. 
+  // Note that the image captured by the device is allocated/released
+  // by the capture function.
   // There is no need to release it explicitly.
-    
+
   // all OK : main returns 0
-  
+
   return 0;
 
 }

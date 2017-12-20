@@ -12,7 +12,7 @@
 int main( int argc, char** argv )
 {
 
-  IplImage* inputImg = NULL;  // input image object 
+  IplImage* inputImg = NULL;  // input image object
   IplImage* outputImg = NULL;  // output image object
 
   char const * windowName = "OPENCV: blurred image"; // window name
@@ -21,28 +21,28 @@ int main( int argc, char** argv )
 
     if( argc == 2 && (inputImg = cvLoadImage( argv[1], 1)) != 0 )
     {
-      
+
       // Create the output image (same size & depth as input)
-      
-      outputImg = cvCreateImage(cvSize(inputImg->width,inputImg->height), 
+
+      outputImg = cvCreateImage(cvSize(inputImg->width,inputImg->height),
 				inputImg->depth, inputImg->nChannels);
 
       // blur the input image using a 5 x 5 mask and store in output image
 
-      cvSmooth(inputImg, outputImg, CV_BLUR, 5, 5, 0, 0); 
+      cvSmooth(inputImg, outputImg, CV_BLUR, 5, 5, 0, 0);
 
       // create window object
 
       cvNamedWindow(windowName, 1 );
-      
+
       // display image in window
 
       cvShowImage( windowName, outputImg);
-      
+
       // start event processing loop (very important,in fact essential for GUI)
 
-      cvWaitKey(0); 
-      
+      cvWaitKey(0);
+
       // destroy window object
       // (triggered by event loop *only* window is closed)
 
@@ -52,7 +52,7 @@ int main( int argc, char** argv )
 
       cvReleaseImage( &inputImg );
       cvReleaseImage( &outputImg );
-      
+
       // all OK : main returns 0
 
       return 0;

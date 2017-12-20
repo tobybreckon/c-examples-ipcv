@@ -14,7 +14,7 @@
 int main( int argc, char** argv )
 {
 
-  IplImage* img;  // image object 
+  IplImage* img;  // image object
   IplImage* grayImg = NULL;  // tmp image object
   IplImage* edgeImg = NULL;  // output image object
 
@@ -30,7 +30,7 @@ int main( int argc, char** argv )
   // grab an image from camera (here assume only 1 camera, device #0)
 
   CvCapture* capture = cvCaptureFromCAM(0); // capture from video device #0
-  if(!cvGrabFrame(capture)){              
+  if(!cvGrabFrame(capture)){
     printf("Could not grab a frame\n");
     exit(0);
   }
@@ -38,11 +38,11 @@ int main( int argc, char** argv )
 
   // create other images (and make sure they have the same origin)
 
-  grayImg = cvCreateImage(cvSize(img->width,img->height), 
+  grayImg = cvCreateImage(cvSize(img->width,img->height),
 				img->depth, 1);
   grayImg->origin = img->origin;
 
-  edgeImg = cvCreateImage(cvSize(img->width,img->height), 
+  edgeImg = cvCreateImage(cvSize(img->width,img->height),
 				img->depth, 1);
   edgeImg->origin = img->origin;
 
@@ -52,7 +52,7 @@ int main( int argc, char** argv )
 
   while(keepProcessing)
   {
-   
+
    img=cvRetrieveFrame(capture); // retrieve the captured frame
 
    cvCvtColor(img, grayImg, CV_BGR2GRAY);
@@ -65,15 +65,15 @@ int main( int argc, char** argv )
 
    // start event processing loop
 
-   // here we use a 4 msec delay for ~25 fps (100/25 = 4) 
+   // here we use a 4 msec delay for ~25 fps (100/25 = 4)
 
     key = cvWaitKey(4);
 
 	if (key == 'x'){
-			
+
 	   // if user presses "x" then exit
-			
-	   printf("Keyboard exit requested : exiting now - bye!\n");	
+
+	   printf("Keyboard exit requested : exiting now - bye!\n");
 	   keepProcessing = false;
 	}
 
@@ -82,12 +82,12 @@ int main( int argc, char** argv )
     cvGrabFrame(capture);
 
   }
-  
+
   // destroy window object
   // (triggered by event loop *only* window is closed)
-  
+
   cvDestroyWindow( windowName );
-  
+
   // release capture device
 
   cvReleaseCapture(&capture);
@@ -97,12 +97,12 @@ int main( int argc, char** argv )
   cvReleaseImage( &grayImg );
   cvReleaseImage( &edgeImg );
 
-  // Note that the image captured by the device is allocated/released 
-  // by the capture function. 
+  // Note that the image captured by the device is allocated/released
+  // by the capture function.
   // There is no need to release it explicitly.
 
   // all OK : main returns 0
-  
+
   return 0;
 
 }

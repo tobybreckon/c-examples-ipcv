@@ -136,7 +136,7 @@ int main( int argc, char** argv )
           // taken in ms. from this (1000ms/25fps = 40ms per frame) value whilst ensuring
           // we get a +ve wait time
 
-          key = waitKey((int) std::max(2.0, EVENT_LOOP_DELAY -
+          key = cvWaitKey((int) std::max(2.0, EVENT_LOOP_DELAY -
                         (((getTickCount() - timeStart) / getTickFrequency()) * 1000)));
 
 		  if (key == 'x'){

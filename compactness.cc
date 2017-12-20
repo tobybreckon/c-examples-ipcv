@@ -278,7 +278,7 @@ int main( int argc, char** argv )
           // we get a +ve wait time
 
 
-          key = waitKey((int) std::max(2.0, EVENT_LOOP_DELAY -
+          key = cvWaitKey((int) std::max(2.0, EVENT_LOOP_DELAY -
                         (((getTickCount() - timeStart) / getTickFrequency()) * 1000)));
 
 		  if (key == 'x'){
